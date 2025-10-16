@@ -1,0 +1,12 @@
+{
+    "name": "criatech3d/sistema",
+    "description": "Sistema de Gestão Criatech3D",
+    "type": "project",
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "controllers/",
+            "security/"
+        ]
+    }
+}
