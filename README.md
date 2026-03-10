@@ -1,3 +1,13 @@
+## 🚀 Highlights
+
+- Plataforma completa integrando **Web + Mobile + Camada Analítica**
+- Aplicação móvel **Offline-First** para operações em campo
+- Arquitetura backend baseada em **MVC e APIs REST**
+- Sistema projetado para **gestão de operações de engenharia e monitorização geográfica**
+
+---
+
+
 # Tectheta — Field Operations Data Platform
 
 ![Status](https://img.shields.io/badge/Status-Desenvolvimento_Ativo-success)
