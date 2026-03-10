@@ -143,6 +143,26 @@ Características principais:
 
 ---
 
+# 📱 Aplicação Mobile
+
+### Autenticação
+
+![Login](capturas/login.png)
+
+---
+
+### Projetos Disponíveis
+
+![Projetos](capturas/projeto.png)
+
+---
+
+### Histórico de Execução da OS
+
+![Histórico](capturas/historico.png)
+
+---
+
 # 💡 Sobre o Projeto
 
 Este repositório apresenta uma **visão arquitetural da plataforma Tectheta**, desenvolvida de forma independente como demonstração prática de competências em:
