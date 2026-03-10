@@ -153,7 +153,7 @@ Características principais:
 
 ### Projetos Disponíveis
 
-![Projetos](capturas/projeto.png)
+![Projetos](capturas/menu.png)
 
 ---
 
