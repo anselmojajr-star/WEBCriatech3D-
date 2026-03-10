@@ -1,0 +1,139 @@
+@echo off
+chcp 65001 >nul
+setlocal
+
+set "BASE=portfolio_sanitizado"
+
+echo Criando estrutura em: %BASE%
+mkdir "%BASE%"
+mkdir "%BASE%\app"
+mkdir "%BASE%\app\controllers"
+mkdir "%BASE%\app\models"
+mkdir "%BASE%\app\views"
+mkdir "%BASE%\core"
+mkdir "%BASE%\config"
+mkdir "%BASE%\public"
+mkdir "%BASE%\public\assets"
+mkdir "%BASE%\public\assets\js"
+mkdir "%BASE%\public\assets\css"
+mkdir "%BASE%\storage"
+mkdir "%BASE%\storage\logs"
+mkdir "%BASE%\docs"
+
+(
+echo # Portfolio Sanitized Project
+echo.
+echo Este repositório eh uma versao sanitizada para portfolio.
+echo Componentes sensiveis, regras proprietarias e credenciais foram omitidos propositalmente.
+echo.
+echo ## Estrutura
+echo - app/controllers
+echo - app/models
+echo - app/views
+echo - core
+echo - config
+echo - public
+echo - storage
+echo - docs
+) > "%BASE%\README.md"
+
+(
+echo ^<?php
+echo // Front Controller de exemplo
+echo require_once __DIR__ . '/../core/Router.php';
+echo.
+echo $router = new Router^(^);
+echo $router-^>get^('/', function^(^) {
+echo     echo "Portfolio sanitizado funcionando.";
+echo }^);
+echo.
+echo $router-^>dispatch^(^);
+) > "%BASE%\public\index.php"
+
+(
+echo ^<?php
+echo class Router {
+echo     private $routes = [];
+echo.
+echo     public function get^($path, $handler^) {
+echo         $this-^>routes['GET'][$path] = $handler;
+echo     }
+echo.
+echo     public function dispatch^(^) {
+echo         $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
+echo         $uri = parse_url^($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH^);
+echo.
+echo         if ^(isset^($this-^>routes[$method][$uri]^)^) {
+echo             call_user_func^($this-^>routes[$method][$uri]^);
+echo             return;
+echo         }
+echo.
+echo         http_response_code^(404^);
+echo         echo "404 - Route not found";
+echo     }
+echo }
+) > "%BASE%\core\Router.php"
+
+(
+echo ^<?php
+echo class ExampleController {
+echo     public function index^(^) {
+echo         return "Controller de exemplo";
+echo     }
+echo }
+) > "%BASE%\app\controllers\ExampleController.php"
+
+(
+echo ^<?php
+echo class ExampleModel {
+echo     public function all^(^) {
+echo         return [];
+echo     }
+echo }
+) > "%BASE%\app\models\ExampleModel.php"
+
+(
+echo ^<h1^>View de exemplo^</h1^>
+echo ^<p^>Estrutura sanitizada para portfolio.^</p^>
+) > "%BASE%\app\views\example.php"
+
+(
+echo APP_NAME=PortfolioSanitized
+echo APP_ENV=local
+echo APP_DEBUG=true
+echo DB_HOST=localhost
+echo DB_NAME=example_db
+echo DB_USER=example_user
+echo DB_PASS=example_pass
+) > "%BASE%\.env.example"
+
+(
+echo .env
+echo *.sql
+echo *.zip
+echo /storage/logs/*
+echo /vendor/
+) > "%BASE%\.gitignore"
+
+(
+echo // JS demonstrativo
+echo console.log^('Portfolio sanitizado carregado'^);
+) > "%BASE%\public\assets\js\app.js"
+
+(
+echo /* CSS demonstrativo */
+echo body { font-family: Arial, sans-serif; margin: 40px; }
+) > "%BASE%\public\assets\css\style.css"
+
+(
+echo Documentacao resumida do projeto.
+echo.
+echo - Objetivo: demonstrar arquitetura
+echo - Codigo sensivel removido
+echo - Estrutura pronta para portfolio
+) > "%BASE%\docs\overview.txt"
+
+echo.
+echo Estrutura criada com sucesso.
+echo Pasta: %BASE%
+pause
