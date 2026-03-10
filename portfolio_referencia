@@ -1,0 +1,176 @@
+@echo off
+chcp 65001 >nul
+setlocal
+
+set "BASE=field_operations_reference_architecture"
+
+echo Criando estrutura em: %BASE%
+mkdir "%BASE%"
+mkdir "%BASE%\app"
+mkdir "%BASE%\app\controllers"
+mkdir "%BASE%\app\models"
+mkdir "%BASE%\app\views"
+mkdir "%BASE%\core"
+mkdir "%BASE%\config"
+mkdir "%BASE%\public"
+mkdir "%BASE%\public\assets"
+mkdir "%BASE%\public\assets\js"
+mkdir "%BASE%\public\assets\css"
+mkdir "%BASE%\storage"
+mkdir "%BASE%\storage\logs"
+mkdir "%BASE%\docs"
+
+(
+echo # Field Operations Reference Architecture
+echo.
+echo Repositorio demonstrativo de arquitetura backend orientada a operacoes de campo.
+echo.
+echo Este projeto foi estruturado para demonstrar organizacao MVC, Front Controller,
+echo separacao de responsabilidades e boas praticas de portfolio tecnico.
+echo.
+echo Componentes sensiveis, regras proprietarias, credenciais e fluxos especificos
+echo foram omitidos propositalmente.
+echo.
+echo ## Estrutura
+echo - app/controllers
+echo - app/models
+echo - app/views
+echo - core
+echo - config
+echo - public
+echo - storage
+echo - docs
+echo.
+echo ## Objetivo
+echo Demonstrar arquitetura de referencia para sistemas operacionais integrados.
+) > "%BASE%\README.md"
+
+(
+echo ^<?php
+echo // Front Controller de referencia
+echo require_once __DIR__ . '/../core/Router.php';
+echo require_once __DIR__ . '/../app/controllers/WorkOrderController.php';
+echo.
+echo $router = new Router^(^);
+echo.
+echo $router-^>get^('/', function^(^) {
+echo     echo "Field Operations Reference Architecture";
+echo }^);
+echo.
+echo $router-^>get^('/work-orders', [new WorkOrderController^(^), 'index']^);
+echo.
+echo $router-^>dispatch^(^);
+) > "%BASE%\public\index.php"
+
+(
+echo ^<?php
+echo class Router {
+echo     private $routes = [];
+echo.
+echo     public function get^($path, $handler^) {
+echo         $this-^>routes['GET'][$path] = $handler;
+echo     }
+echo.
+echo     public function dispatch^(^) {
+echo         $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
+echo         $uri = parse_url^($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH^);
+echo.
+echo         if ^(isset^($this-^>routes[$method][$uri]^)^) {
+echo             $handler = $this-^>routes[$method][$uri];
+echo.
+echo             if ^(is_array^($handler^) && count^($handler^) === 2^) {
+echo                 $controller = $handler[0];
+echo                 $action = $handler[1];
+echo                 echo $controller-^>$action^(^);
+echo                 return;
+echo             }
+echo.
+echo             call_user_func^($handler^);
+echo             return;
+echo         }
+echo.
+echo         http_response_code^(404^);
+echo         echo "404 - Route not found";
+echo     }
+echo }
+) > "%BASE%\core\Router.php"
+
+(
+echo ^<?php
+echo class WorkOrderController {
+echo     public function index^(^) {
+echo         return "Reference work orders endpoint";
+echo     }
+echo }
+) > "%BASE%\app\controllers\WorkOrderController.php"
+
+(
+echo ^<?php
+echo class AssetModel {
+echo     public function all^(^) {
+echo         return [];
+echo     }
+echo }
+) > "%BASE%\app\models\AssetModel.php"
+
+(
+echo ^<h1^>Operations Dashboard^</h1^>
+echo ^<p^>Demonstration view for a field operations reference architecture.^</p^>
+) > "%BASE%\app\views\operations-dashboard.php"
+
+(
+echo APP_NAME=FieldOperationsReferenceArchitecture
+echo APP_ENV=local
+echo APP_DEBUG=true
+echo DB_HOST=localhost
+echo DB_NAME=reference_db
+echo DB_USER=reference_user
+echo DB_PASS=reference_pass
+) > "%BASE%\.env.example"
+
+(
+echo .env
+echo *.sql
+echo *.zip
+echo /storage/logs/*
+echo /vendor/
+echo /node_modules/
+) > "%BASE%\.gitignore"
+
+(
+echo // JS demonstrativo
+echo console.log^('Field operations reference architecture loaded'^);
+) > "%BASE%\public\assets\js\app.js"
+
+(
+echo /* CSS demonstrativo */
+echo body { font-family: Arial, sans-serif; margin: 40px; background: #f4f6f9; }
+echo h1 { color: #1f2937; }
+echo p { color: #4b5563; }
+) > "%BASE%\public\assets\css\style.css"
+
+(
+echo # Visao Geral
+echo.
+echo Este repositorio demonstra uma arquitetura de referencia para plataformas
+echo operacionais integradas, com foco em separacao de camadas, organizacao
+echo de projeto e capacidade de extensao.
+echo.
+echo ## Conceitos Demonstrados
+echo.
+echo - Front Controller
+echo - Router centralizado
+echo - Controllers e Models desacoplados
+echo - Estrutura MVC
+echo - Configuracao isolada
+echo - Assets separados por responsabilidade
+echo.
+echo ## Escopo
+echo.
+echo Projeto demonstrativo para portfolio tecnico.
+) > "%BASE%\docs\overview.md"
+
+echo.
+echo Estrutura criada com sucesso.
+echo Pasta: %BASE%
+pause
