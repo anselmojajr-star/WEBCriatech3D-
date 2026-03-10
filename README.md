@@ -61,7 +61,7 @@ Sistema de gestão de operações de campo com integração web e mobile.
 
 ## Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](capturar telas/dashboard.png)
 
 ## Gestão de Projetos
 
