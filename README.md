@@ -1,69 +1,155 @@
-# Criatech3D | Ecossistema de Engenharia de Dados e Gestão Operacional
+# Tectheta — Field Operations Data Platform
 
 ![Status](https://img.shields.io/badge/Status-Desenvolvimento_Ativo-success)
-![Data Engineering](https://img.shields.io/badge/Data_Engineering-Pipeline_%26_ETL-blue)
 ![Architecture](https://img.shields.io/badge/Architecture-MVC_%2B_Offline_First-orange)
+![Data Platform](https://img.shields.io/badge/Data_Platform-End_to_End-blue)
+
+---
 
 ## 📌 Visão Geral
-O *Criatech3D* é um projeto prático e independente de arquitetura de dados e engenharia de software, desenvolvido para resolver o desafio de recolha, processamento e análise de dados em operações de engenharia de campo.
 
-Mais do que um simples sistema de gestão, o Criatech3D atua como uma *Plataforma de Dados End-to-End*: garante a integridade da informação desde a recolha no telemóvel (offline) em zonas remotas, passando pela orquestração de APIs e processamento transacional, até à entrega de métricas financeiras num dashboard de Business Intelligence.
+**Tectheta** é uma plataforma desenvolvida para gestão e análise de operações de engenharia de campo.
 
----
+O projeto integra três camadas principais:
 
-## ⚙️ Arquitetura de Dados e Funcionalidades Principais
+- Sistema web administrativo para gestão operacional  
+- Aplicação móvel para recolha de dados em campo  
+- Pipeline de dados para análise e indicadores operacionais  
 
-### 1. Ingestão de Dados e Automação (ETL/ELT)
-* *Robô de Precificação (Web Scraping):* Algoritmo automatizado com rotação de User-Agent e pausas heurísticas para extração de preços de mercado, garantindo a atualização contínua da base de dados de materiais sem intervenção manual.
-* *Sincronização Mobile-to-Cloud:* Arquitetura Offline-First. A equipa de campo recolhe dados via App (Flutter) numa base de dados local (SQLite). Quando há conectividade, um serviço de fila (Sync Service) processa o envio estruturado para a API via JWT, garantindo zero perda de pacotes.
-
-### 2. Modelação e Processamento Backend
-* *Arquitetura MVC & Front Controller:* O "motor" do sistema foi construído com PHP nativo gerido por Composer, focado em alta performance e no Princípio DRY (Don't Repeat Yourself).
-* *Transações ACID:* O processamento de Ordens de Serviço (OS) e Medições Financeiras utiliza blocos transacionais rigorosos para evitar dados órfãos ou inconsistentes na base de dados relacional.
-* *Vigência Histórica de Preços:* Modelação avançada que congela o valor financeiro de um item no tempo, garantindo que o recálculo de medições antigas no BI seja 100% preciso, mesmo com a flutuação atual de mercado.
-
-### 3. Inteligência Geográfica (GIS)
-* *Auditoria por Geofencing:* Integração com a API do Google Maps para monitorização espacial. O sistema processa as coordenadas GPS das fotos recolhidas em campo e emite um alerta automático se a evidência visual for capturada fora do raio planeado (>100 metros) da Ordem de Serviço.
-* *Cercas Virtuais:* Desenho de polígonos no mapa armazenados via endpoints assíncronos para validação territorial de equipas.
-
-### 4. Governança e Camada Analítica (BI)
-* Os dados processados pelo Tectheta alimentam diretamente a camada semântica, onde modelos dimensionais (Star Schema) são consumidos pelo *Power BI* para gerar KPIs em tempo real para a diretoria, erradicando o uso de folhas de cálculo paralelas.
+A plataforma foi projetada para funcionar em cenários onde a conectividade é limitada, garantindo **integridade e rastreabilidade dos dados desde a recolha até à camada analítica**.
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 🧱 Arquitetura da Plataforma
 
-*Engenharia de Dados e Base de Dados:*
-* SQL (Avançado)
-* MySQL / PostgreSQL (Cloud)
-* SQLite (Mobile Storage)
-* Python / PHP (Scripts de Ingestão e Web Scraping)
+Aplicação Mobile (Flutter)
+│
+│ Sincronização segura
+▼
+API Backend (PHP)
+│
+│ Processamento transacional
+▼
+Base de Dados Operacional
+│
+│ Modelação analítica
+▼
+Camada de Business Intelligence
 
-*Backend e APIs:*
-* PHP Nativo (Arquitetura MVC Artesanal)
-* RESTful APIs (Autenticação baseada em JWT)
-* Composer (Gestão de Dependências)
 
-*Frontend e Mobilidade:*
-* Flutter / Dart (App Mobile Offline-First)
-* JavaScript / AJAX (Live Search e Interatividade DOM)
-* Google Maps API (Geoprocessamento)
+Princípios de arquitetura utilizados:
+
+- **Offline-First Mobile Architecture**
+- **Front Controller Backend Pattern**
+- **Arquitetura orientada a APIs**
+- **Princípio DRY (Don't Repeat Yourself)**
+- **Processamento transacional ACID**
+
+---
+
+## ⚙️ Principais Capacidades da Plataforma
+
+### Operações de Campo
+
+- Gestão de equipas operacionais
+- Registo de execução de atividades
+- Captura de evidências visuais (fotografia e vídeo)
+- Georreferenciação de operações
+- Auditoria operacional baseada em localização
+
+### Gestão Operacional
+
+- Planeamento e acompanhamento de projetos
+- Gestão de recursos e equipas
+- Monitorização da execução de serviços
+- Controlo de medições operacionais
+
+### Camada Analítica
+
+- Consolidação de dados operacionais
+- Modelação de indicadores de desempenho
+- Integração com ferramentas de Business Intelligence
+- Monitorização de produção e custos operacionais
+
+---
+
+## 📱 Arquitetura Mobile
+
+O aplicativo móvel foi desenvolvido com foco em operações de campo e ambientes com conectividade limitada.
+
+Características principais:
+
+- armazenamento local em **SQLite**
+- operação **offline-first**
+- sincronização automática quando há conectividade
+- captura estruturada de dados operacionais
+
+---
+
+## 🛠️ Stack Tecnológica
+
+### Backend
+
+- PHP  
+- REST APIs  
+- Composer  
+
+### Mobile
+
+- Flutter / Dart  
+- SQLite (armazenamento local)
+
+### Frontend
+
+- JavaScript  
+- AJAX  
+- Bootstrap / AdminLTE  
+
+### Dados
+
+- SQL  
+- MySQL / PostgreSQL  
+- Modelação analítica  
+
+### Integrações
+
+- APIs de geolocalização  
+- ferramentas de Business Intelligence  
+
+---
+
+## 🖥️ Interface do Sistema
+
+### Dashboard Operacional
+
+![Dashboard](capturas/dashboard.png)
+
+---
+
+### Gestão de Projetos
+
+![Projetos](capturas/projetos.png)
+
+---
+
+### Monitorização em Mapa
+
+![Mapa](capturas/mapa.png)
 
 ---
 
 ## 💡 Sobre o Projeto
-*Nota para Recrutadores:* Este repositório reflete a minha capacidade técnica como *Engenheiro de Dados e BI*. O projeto foi desenhado do zero, sem frameworks pesados, para demonstrar o domínio sobre arquitetura de sistemas, modelação de bases de dados relacionais e fluxos de integração contínua de informação. É um projeto de portfólio e de natureza não comercial.
+
+Este repositório apresenta uma visão arquitetural do projeto **Tectheta**, desenvolvido de forma independente como demonstração prática de competências em:
+
+- arquitetura de software  
+- engenharia de dados  
+- integração de sistemas  
+- plataformas operacionais para campo  
+
+O objetivo é demonstrar capacidade de conceção e implementação de **plataformas de dados e sistemas operacionais integrados**.
 
 ---
 
-## Dashboard
-![Dashboard](capturas/dashboard.png)
-
-## Projetos
-![Projetos](capturas/projetos.png)
-
-## Mapa
-![Mapa](capturas/mapa.png)
-
----
-Desenvolvido com foco na integridade do dado por https://www.linkedin.com/in/josemourajr/
+Desenvolvido por  
+https://www.linkedin.com/in/josemourajr/
