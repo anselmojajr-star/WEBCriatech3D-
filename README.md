@@ -55,6 +55,9 @@ Mais do que um simples sistema de gestão, o Tectheta atua como uma *Plataforma 
 *Nota para Recrutadores:* Este repositório reflete a minha capacidade técnica como *Engenheiro de Dados e BI*. O projeto foi desenhado do zero, sem frameworks pesados, para demonstrar o domínio sobre arquitetura de sistemas, modelação de bases de dados relacionais e fluxos de integração contínua de informação. É um projeto de portfólio e de natureza não comercial.
 
 ---
+# Tectheta Field Operations Platform
+
+Sistema de gestão de operações de campo com integração web e mobile.
 
 ## Dashboard
 
@@ -67,6 +70,7 @@ Mais do que um simples sistema de gestão, o Tectheta atua como uma *Plataforma 
 ## Mapa Operacional
 
 ![Mapa](screenshots/mapa.png)
+
 
 ---
 Desenvolvido com foco na integridade do dado por https://www.linkedin.com/in/josemourajr/
