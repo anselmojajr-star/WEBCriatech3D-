@@ -54,6 +54,16 @@ Mais do que um simples sistema de gestão, o Tectheta atua como uma *Plataforma 
 ## 💡 Sobre o Projeto
 *Nota para Recrutadores:* Este repositório reflete a minha capacidade técnica como *Engenheiro de Dados e BI*. O projeto foi desenhado do zero, sem frameworks pesados, para demonstrar o domínio sobre arquitetura de sistemas, modelação de bases de dados relacionais e fluxos de integração contínua de informação. É um projeto de portfólio e de natureza não comercial.
 
+---
+
+## Dashboard
+![Dashboard](capturas/painel.png)
+
+## Projetos
+![Projetos](capturas/projetos.png)
+
+## Mapa
+![Mapa](capturas/mapa.png)
 
 ---
 Desenvolvido com foco na integridade do dado por https://www.linkedin.com/in/josemourajr/
