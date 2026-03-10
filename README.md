@@ -1,13 +1,13 @@
-# Tectheta | Ecossistema de Engenharia de Dados e Gestão Operacional
+# Criatech3D | Ecossistema de Engenharia de Dados e Gestão Operacional
 
 ![Status](https://img.shields.io/badge/Status-Desenvolvimento_Ativo-success)
 ![Data Engineering](https://img.shields.io/badge/Data_Engineering-Pipeline_%26_ETL-blue)
 ![Architecture](https://img.shields.io/badge/Architecture-MVC_%2B_Offline_First-orange)
 
 ## 📌 Visão Geral
-O *tectheta* é um projeto prático e independente de arquitetura de dados e engenharia de software, desenvolvido para resolver o desafio de recolha, processamento e análise de dados em operações de engenharia de campo.
+O *Criatech3D* é um projeto prático e independente de arquitetura de dados e engenharia de software, desenvolvido para resolver o desafio de recolha, processamento e análise de dados em operações de engenharia de campo.
 
-Mais do que um simples sistema de gestão, o Tectheta atua como uma *Plataforma de Dados End-to-End*: garante a integridade da informação desde a recolha no telemóvel (offline) em zonas remotas, passando pela orquestração de APIs e processamento transacional, até à entrega de métricas financeiras num dashboard de Business Intelligence.
+Mais do que um simples sistema de gestão, o Criatech3D atua como uma *Plataforma de Dados End-to-End*: garante a integridade da informação desde a recolha no telemóvel (offline) em zonas remotas, passando pela orquestração de APIs e processamento transacional, até à entrega de métricas financeiras num dashboard de Business Intelligence.
 
 ---
 
