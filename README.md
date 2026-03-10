@@ -57,7 +57,7 @@ Mais do que um simples sistema de gestão, o Tectheta atua como uma *Plataforma 
 ---
 
 ## Dashboard
-![Dashboard](capturas/painel.png)
+![Dashboard](capturas/dashboard.png)
 
 ## Projetos
 ![Projetos](capturas/projetos.png)
