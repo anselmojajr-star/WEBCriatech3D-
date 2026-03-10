@@ -6,119 +6,124 @@
 
 ---
 
-## 📌 Visão Geral
+# 📌 Visão Geral
 
 **Tectheta** é uma plataforma desenvolvida para gestão e análise de operações de engenharia de campo.
 
-O projeto integra três camadas principais:
+O sistema integra **três camadas principais**:
 
-- Sistema web administrativo para gestão operacional  
-- Aplicação móvel para recolha de dados em campo  
-- Pipeline de dados para análise e indicadores operacionais  
+* **Sistema web administrativo** para gestão operacional
+* **Aplicação móvel** utilizada por equipas em campo
+* **Pipeline de dados** para análise e monitorização de indicadores operacionais
 
-A plataforma foi projetada para funcionar em cenários onde a conectividade é limitada, garantindo **integridade e rastreabilidade dos dados desde a recolha até à camada analítica**.
-
----
-
-## 🧱 Arquitetura da Plataforma
-
-Aplicação Mobile (Flutter)
-│
-│ Sincronização segura
-▼
-API Backend (PHP)
-│
-│ Processamento transacional
-▼
-Base de Dados Operacional
-│
-│ Modelação analítica
-▼
-Camada de Business Intelligence
-
-
-Princípios de arquitetura utilizados:
-
-- **Offline-First Mobile Architecture**
-- **Front Controller Backend Pattern**
-- **Arquitetura orientada a APIs**
-- **Princípio DRY (Don't Repeat Yourself)**
-- **Processamento transacional ACID**
+A plataforma foi concebida para ambientes onde a conectividade pode ser limitada, garantindo **integridade, rastreabilidade e consistência dos dados desde a recolha em campo até à camada analítica**.
 
 ---
 
-## ⚙️ Principais Capacidades da Plataforma
+# 🧱 Arquitetura da Plataforma
 
-### Operações de Campo
+```
+Mobile Application (Flutter)
+        │
+        │ Sincronização Offline
+        ▼
+REST API Backend (PHP)
+        │
+        │ Processamento Transacional
+        ▼
+Operational Database
+        │
+        │ Modelação Analítica
+        ▼
+Business Intelligence
+```
 
-- Gestão de equipas operacionais
-- Registo de execução de atividades
-- Captura de evidências visuais (fotografia e vídeo)
-- Georreferenciação de operações
-- Auditoria operacional baseada em localização
+Princípios arquiteturais aplicados:
 
-### Gestão Operacional
-
-- Planeamento e acompanhamento de projetos
-- Gestão de recursos e equipas
-- Monitorização da execução de serviços
-- Controlo de medições operacionais
-
-### Camada Analítica
-
-- Consolidação de dados operacionais
-- Modelação de indicadores de desempenho
-- Integração com ferramentas de Business Intelligence
-- Monitorização de produção e custos operacionais
+* **Offline-First Mobile Architecture**
+* **Front Controller Backend Pattern**
+* **Arquitetura orientada a APIs**
+* **Princípio DRY (Don't Repeat Yourself)**
+* **Processamento transacional ACID**
 
 ---
 
-## 📱 Arquitetura Mobile
+# ⚙️ Capacidades da Plataforma
 
-O aplicativo móvel foi desenvolvido com foco em operações de campo e ambientes com conectividade limitada.
+## Operações de Campo
+
+* Gestão de equipas operacionais
+* Registo de execução de atividades em campo
+* Captura de evidências visuais (fotografia e vídeo)
+* Georreferenciação de operações
+* Auditoria operacional baseada em localização
+
+---
+
+## Gestão Operacional
+
+* Planeamento e acompanhamento de projetos
+* Gestão de contratos e recursos operacionais
+* Monitorização da execução de serviços
+* Controlo de medições operacionais
+
+---
+
+## Camada Analítica
+
+* Consolidação de dados operacionais
+* Modelação de indicadores de desempenho
+* Integração com ferramentas de Business Intelligence
+* Monitorização de produção e custos operacionais
+
+---
+
+# 📱 Aplicação Mobile
+
+O aplicativo móvel foi desenvolvido com foco em **operações de campo e cenários com conectividade limitada**.
 
 Características principais:
 
-- armazenamento local em **SQLite**
-- operação **offline-first**
-- sincronização automática quando há conectividade
-- captura estruturada de dados operacionais
+* armazenamento local em **SQLite**
+* arquitetura **offline-first**
+* sincronização automática quando há conectividade
+* captura estruturada de dados operacionais
 
 ---
 
-## 🛠️ Stack Tecnológica
+# 🛠️ Stack Tecnológica
 
-### Backend
+## Backend
 
-- PHP  
-- REST APIs  
-- Composer  
+* PHP
+* REST APIs
+* Composer
 
-### Mobile
+## Mobile
 
-- Flutter / Dart  
-- SQLite (armazenamento local)
+* Flutter / Dart
+* SQLite (armazenamento local)
 
-### Frontend
+## Frontend
 
-- JavaScript  
-- AJAX  
-- Bootstrap / AdminLTE  
+* JavaScript
+* AJAX
+* Bootstrap / AdminLTE
 
-### Dados
+## Dados
 
-- SQL  
-- MySQL / PostgreSQL  
-- Modelação analítica  
+* SQL
+* MySQL / PostgreSQL
+* Modelação analítica
 
-### Integrações
+## Integrações
 
-- APIs de geolocalização  
-- ferramentas de Business Intelligence  
+* APIs de geolocalização
+* ferramentas de Business Intelligence
 
 ---
 
-## 🖥️ Interface do Sistema
+# 🖥️ Interface do Sistema
 
 ### Dashboard Operacional
 
@@ -138,18 +143,22 @@ Características principais:
 
 ---
 
-## 💡 Sobre o Projeto
+# 💡 Sobre o Projeto
 
-Este repositório apresenta uma visão arquitetural do projeto **Tectheta**, desenvolvido de forma independente como demonstração prática de competências em:
+Este repositório apresenta uma **visão arquitetural da plataforma Tectheta**, desenvolvida de forma independente como demonstração prática de competências em:
 
-- arquitetura de software  
-- engenharia de dados  
-- integração de sistemas  
-- plataformas operacionais para campo  
+* arquitetura de software
+* engenharia de dados
+* integração mobile + backend
+* plataformas operacionais para equipas de campo
 
-O objetivo é demonstrar capacidade de conceção e implementação de **plataformas de dados e sistemas operacionais integrados**.
+A implementação completa do sistema não é exposta neste repositório.
 
 ---
 
-Desenvolvido por  
+# 👤 Autor
+
+José Moura Jr
+
+LinkedIn
 https://www.linkedin.com/in/josemourajr/
